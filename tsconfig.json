@@ -9,9 +9,6 @@
     "resolveJsonModule": true,
     "baseUrl": "./src",
     "typeRoots": ["./src/types", "./node_modules/@types"],
-    "paths": {
-      "*": ["node_modules/*"]
-    },
     "outDir": "./dist",
     "rootDir": "./src",
     "declaration": true

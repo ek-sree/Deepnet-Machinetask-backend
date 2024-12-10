@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import config from './config/index.js';
-import { connectToDatabase } from '../src/database/mongodb.js';
-import { authRouter } from '../src/app/router/authRoute.js';
-import { adminRouter } from '../src/app/router/adminRouter.js';
-import { userRouter } from '../src/app/router/userRouter.js';
+import { connectToDatabase } from './database/mongodb.js';
+import { authRouter } from './app/router/authRoute.js';
+import { adminRouter } from './app/router/adminRouter.js';
+import { userRouter } from './app/router/userRouter.js';
 const app = express();
 app.use(express.json());
 app.use(cors({
