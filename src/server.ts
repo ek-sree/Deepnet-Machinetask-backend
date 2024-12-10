@@ -5,6 +5,8 @@ import { connectToDatabase } from './database/mongodb.js';
 import { authRouter } from './app/router/authRoute.js';
 import { adminRouter } from './app/router/adminRouter.js';
 import { userRouter } from './app/router/userRouter.js';
+import { limiter } from './utils/rateLimiter.js';
+import helmet from 'helmet';
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use(cors({
     origin: config.cors,
     credentials: true,
 }));
+app.use(limiter)
+app.use(helmet())
 
 app.use('/api/auth', authRouter)
 app.use('/api/admin', adminRouter)
